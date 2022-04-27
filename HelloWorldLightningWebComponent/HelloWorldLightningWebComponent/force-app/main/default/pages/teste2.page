@@ -1,0 +1,4 @@
+<apex:page>
+    <h1>Hello, World 2</h1>
+    <p>Testando via ide</p>
+</apex:page>

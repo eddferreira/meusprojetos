@@ -1,0 +1,45 @@
+<apex:page controller="ImobiliariaController">
+    <style>
+        #conteudo{
+            margin-top: 10%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        #form1{
+            border: solid;
+            width: 300px;
+        }
+    </style>
+
+    <div id= "conteudo">
+        <center>
+            <div id="form1">
+                <apex:form>
+                    <apex:pageBlock title="Cadastrar Imoveis">
+                        <!-- Menssagem da tela -->
+                        <apex:pageMessages id="ShowMessage"/>
+
+                        <apex:panelGrid columns="2">
+                            Quartos: <apex:inputText value="{!quartos}"/>
+                            Banheiro: <apex:inputText  value="{!banheiros}"/>
+                            Sala: <apex:inputText value="{!sala}"/>
+                            Copa: <apex:inputText value="{!copa}"/>
+                            Cozinha: <apex:inputText value="{!cozinha}"/>
+                            Garagen: <apex:inputText value="{!garagens}"/>
+                            Valor: <apex:inputText value="{!valor}"/>
+                            <!-- campo pickList -->
+                            Tipo do Imovel:
+                            <apex:selectList value="{!tipImovel}" multiselect="false" size="1" required="true">
+                                <!-- Chamada do metodo que preenche as opções sem utilizar o GET do controller-->
+                                <apex:selectOptions value="{!MyOptions}"/>
+                            </apex:selectList>
+                        </apex:panelGrid>
+                        <br/>
+                        <apex:commandButton value="Salvar" action="{!salvarImoveis}"/>
+                    </apex:pageBlock>
+                </apex:form>
+            </div>
+        </center>
+    </div> 
+</apex:page>
